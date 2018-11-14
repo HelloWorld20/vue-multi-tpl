@@ -33,16 +33,11 @@ export default {
 	},
 	methods: {
 		...mapActions(['getInitData', 'getTestData', 'getStorageData', 'saveData'])
-	},
-	watch: {
-		getState(val) {
-
-		}
 	}
 };
 </script>
 
-<style lang="less" scoped>
+<style lang="less">
 // 引入公共样式，别名
 @import '~@/assets/css/common.less';
 

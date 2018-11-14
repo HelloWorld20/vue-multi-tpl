@@ -16,13 +16,13 @@ export default {
 		});
 	},
 	getStorageData() {
+		// 即使不是异步也需要返回一个Promise，保证业务使用统一风格
 		return new Promise((resolve, reject) => {
 			resolve(localStorage.getItem('data'));
 		});
 	},
 	saveData(state, data) {
 		return new Promise((resolve, reject) => {
-			console.log('localStorage', data);
 			localStorage.setItem('data', data);
 			resolve();
 		});

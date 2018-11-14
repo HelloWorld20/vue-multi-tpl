@@ -1,4 +1,3 @@
 export default {
-	commonState: '',
-	state: 'commonState'
+	fireData: null
 };

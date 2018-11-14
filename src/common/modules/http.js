@@ -39,8 +39,7 @@ $axios.interceptors.response.use(response => {
 
 	return response;
 }, error => {
-	console.log('拦截处抛出错误');
-
+	console.log('拦截器抛出错误');
 	return Promise.reject({
 		msg: error.message || '网络故障',
 		type: /^timeout of/.test(error.message) ? 'HTTPERROR[HTTPERROR.TIMEOUTERROR]' : 'HTTPERROR[HTTPERROR.NETWORKERROR]',
@@ -58,15 +57,14 @@ export const get = options => {
 			url: options.url,
 			params: options.data
 		}).then(res => {
-			console.log('统一成功处理');
-			console.log(res);
+			console.log('统一成功处理', res);
 			resolve(res.data);
 		}).catch(err => {
 			// 如果要自定义错误处理，传一个参数，然后reject
 			if (options.error) {
 				reject(err);
 			} else {
-				console.log('统一错误处理');
+				console.warn('统一错误处理', err);
 			}
 		});
 	});
@@ -80,14 +78,14 @@ export const post = options => {
 			url: options.url,
 			data: options.data
 		}).then(res => {
-			console.log('统一成功处理');
+			console.log('统一成功处理', res);
 			resolve(res.data);
 		}).catch(err => {
 			// 如果要自定义错误处理，传一个参数，然后reject
 			if (options.error) {
 				reject(err);
 			} else {
-				console.log('统一错误处理');
+				console.warn('统一错误处理', err);
 			}
 		});
 	});

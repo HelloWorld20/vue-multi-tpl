@@ -9,8 +9,7 @@
     "debugmock": "vue-cli-service build --mode debugmock",
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit tests/**/*.spec.js",
-    "inspect": "vue-cli-service inspect",
-    "copy": "webpack --config build/webpack.copy.js"
+    "inspect": "vue-cli-service inspect"
   },
   "dependencies": {
     "axios": "^0.18.0",
@@ -18,6 +17,7 @@
     "mockjs": "^1.0.1-beta3",
     "vue": "^2.5.17",
     "vue-router": "^3.0.1",
+    "vue-router-then": "^1.3.180813",
     "vuex": "^3.0.1"
   },
   "devDependencies": {

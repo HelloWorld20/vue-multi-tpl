@@ -1,5 +1,5 @@
 import Mock from 'mockjs';
-import Apis from './apis';
+import { Apis } from './apis';
 
 Mock.setup({
 	timeout: '800 - 1000'
