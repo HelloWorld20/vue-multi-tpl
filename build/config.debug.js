@@ -1,8 +1,8 @@
 const path = require('path');
 const VConsolePlugin = require('vconsole-webpack-plugin');
 
-const chunk = 'evaluate';
-const chunkName = '风险评估'
+const chunk = 'demo';
+const chunkName = 'HelloWorld'
 
 module.exports = {
 	baseUrl: '../../',

@@ -24,11 +24,11 @@ http://localhost:8080/business/（业务名称）.html
 * 单元测试 √
 * normalize.css ×
 * webpack配置文件夹别名 √
-* 合并公共和私有（mock √, api √, store √, empty.vue √） √
+* 合并公共和私有（mock √, api √, store √, Entry.vue √） √
 * 子路由demo（如果异步加载组件的话，分离的组件chunk会识别为common chunk。从而于common-vendor.js一起打包到了dist/common文件夹下了。暂时不考虑异步组件） √
 * vue.config.js 分环境配置 √
-* 撸规范、helloworld页面（包括接口调用）
-* 初始化脚本
+* 撸规范、helloworld页面（包括接口调用）√
+* 初始化脚本 √
 * 定义项目配置 √
 * 自动化测试 ×
 

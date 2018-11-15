@@ -3,7 +3,7 @@ const path = require('path');
 module.exports = {
 	baseUrl: '/',
 	businessArray: [
-		{ chunk: 'evaluate', chunkName: '风险评估' }
+		{ chunk: 'demo', chunkName: 'HelloWorld' }
 	],
 	plugins: [
 

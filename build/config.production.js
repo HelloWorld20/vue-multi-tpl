@@ -4,7 +4,7 @@ module.exports = {
 	baseUrl: '../../',
 	businessArray: [
 		{ chunk: 'note', chunkName: '短信通知服务' },
-		{ chunk: 'evaluate', chunkName: '风险评估' }
+		{ chunk: 'demo', chunkName: 'HelloWorld' }
 	],
 	plugins: [
 
