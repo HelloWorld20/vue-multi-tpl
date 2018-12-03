@@ -1,11 +1,6 @@
 import axios from 'axios';
 const CancelToken = axios.CancelToken;
 const source = CancelToken.source();
-let httpQueue = new Set();
-// 防止重复提交 ?
-// 自定义错误处理 √
-// 接口拦截 √
-// 是否timeout
 
 // 统一配置
 const $axios = axios.create({

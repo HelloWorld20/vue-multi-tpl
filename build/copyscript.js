@@ -1,10 +1,17 @@
 /**
- *初始化业务时需要
+ * 初始化业务
+ * 新建一个业务时，建议通过脚本创建
  */
 var fs = require('fs')
 var path = require('path')
 //引入readline模块
 const readline = require('readline');
+
+// 初始化业务需要替换的内容
+const replaceMap = new Map([
+	['<%= currentTime%>', new Date().toString()],
+	['<%= author%>', '韦姜宏']
+]);
 
 //创建readline接口实例
 const rl = readline.createInterface({
@@ -13,26 +20,12 @@ const rl = readline.createInterface({
 });
 
 var copyFile = function (srcPath, tarPath, cb) {
-	var rs = fs.createReadStream(srcPath)
-	rs.on('error', function (err) {
-		if (err) {
-			console.log('read error', srcPath)
-		}
-		cb && cb(err)
-	})
+	let indexJs = fs.readFileSync(path.resolve(__dirname, srcPath), 'Utf-8')
 
-	var ws = fs.createWriteStream(tarPath)
-	ws.on('error', function (err) {
-		if (err) {
-			console.log('write error', tarPath)
-		}
-		cb && cb(err)
-	})
-	ws.on('close', function (ex) {
-		cb && cb(ex)
-	})
-
-	rs.pipe(ws)
+	for(let [key, value] of replaceMap) {
+		indexJs = indexJs.replace(key, value)
+	}
+	fs.writeFileSync(path.resolve(__dirname, tarPath), indexJs)
 }
 
 var copyFolder = function (srcDir, tarDir, cb) {
@@ -53,10 +46,8 @@ var copyFolder = function (srcDir, tarDir, cb) {
 
 			fs.stat(srcPath, function (err, stats) {
 				if (stats.isDirectory()) {
-					console.log('mkdir', tarPath)
 					fs.mkdir(tarPath, function (err) {
 						if (err) {
-							console.log(err)
 							return
 						}
 
@@ -89,15 +80,16 @@ var init = function(businessName) {
 				return
 			}
 			//continue
+
 		})
 
-	// 给新初始化的业务里修改一些默认信息
 
 }
 
 
 // 输入业务英文名来初始化业务项目文件
 rl.question('输入业务英文名：', function(answer){
+	replaceMap.set('<%= businiessName%>', answer)
 	// 不加close，则不会结束
 	init(answer);
     rl.close();

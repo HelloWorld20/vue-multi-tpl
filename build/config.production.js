@@ -15,6 +15,6 @@ module.exports = {
 		filename: 'business/[name]/[name].[contenthash:8].css'
 	},
 	alias: {
-		'@common': path.resolve('src/common/modules')
+		'@common': path.resolve('src/common/lib')
 	}
 };

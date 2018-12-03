@@ -20,7 +20,7 @@ module.exports = {
 	cssExtra: false,	// 是否抽离css
 	// 别名配置
 	alias: {
-		'@common': path.resolve('src/common/modules')
+		'@common': path.resolve('src/common/lib')
 	},
 	assetsDir: `business/${chunk}`
 };

@@ -1,5 +1,5 @@
 // 引入公共mock
-import commonMock from '@/common/modules/mock.js';
+import commonMock from '@/common/lib/mock.js';
 import Apis from './apis';
 
 // 在这定义业务mock接口
@@ -10,16 +10,16 @@ import Apis from './apis';
 // 第三个为返回值
 const mock = [
 	[
-		Apis.init,
+		Apis.api1,
 		{
-			data: `来自业务接口:${Apis.init}的get数据`
+			data: `来自业务接口:${Apis.api1}的get数据`
 		}
 	],
 	[
-		Apis.comfirm,
+		Apis.api2,
 		'post',
 		{
-			data: `来自业务接口:${Apis.comfirm}的get数据`
+			data: `来自业务接口:${Apis.api2}的post数据`
 		}
 	]
 ];

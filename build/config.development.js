@@ -12,6 +12,6 @@ module.exports = {
 	productionSourceMap: true,
 	cssExtra: false,
 	alias: {
-		'@common': path.resolve('src/common/modules')
+		'@common': path.resolve('src/common/lib')
 	}
 };

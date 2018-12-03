@@ -17,9 +17,6 @@
 </style>
 <script>
 export default {
-	mounted() {
-		// 在这调用fire接口。如果fire通过之后显示router-view
 
-	}
 };
 </script>

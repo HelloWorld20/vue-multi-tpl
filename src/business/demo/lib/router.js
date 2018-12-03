@@ -1,8 +1,13 @@
 import Main from '../pages/Main';
-import commonRoute from '@/common/modules/router';
+import commonRoute from '@/common/lib/router';
 import About from '../pages/About';
 
 export default commonRoute([
+	{
+		path: '/',
+		name: 'entry',
+		component: Main
+	},
 	{
 		path: '/main',
 		name: 'main',

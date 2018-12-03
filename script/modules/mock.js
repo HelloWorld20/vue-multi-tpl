@@ -9,19 +9,19 @@ import Apis from './apis';
 // 第二个可选,请求类型,默认为get,
 // 第三个为返回值
 const mock = [
-	[
-		Apis.init,
-		{
-			data: `来自业务接口:${Apis.init}的get数据`
-		}
-	],
-	[
-		Apis.comfirm,
-		'post',
-		{
-			data: `来自业务接口:${Apis.comfirm}的get数据`
-		}
-	]
+	// [
+	// 	Apis.init,
+	// 	{
+	// 		data: `来自业务接口:${Apis.init}的get数据`
+	// 	}
+	// ],
+	// [
+	// 	Apis.comfirm,
+	// 	'post',
+	// 	{
+	// 		data: `来自业务接口:${Apis.comfirm}的get数据`
+	// 	}
+	// ]
 ];
 
 // 把定义好的数据扔给公共mock即可

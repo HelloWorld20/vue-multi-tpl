@@ -1,3 +1,3 @@
-const config = require(`./config.${process.env.NODE_ENV}`);
+const config = require(`./config.${process.env.FRONT_ENV}`);
 
 module.exports = config;

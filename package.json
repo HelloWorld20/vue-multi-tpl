@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "debug": "vue-cli-service build --mode debug",
-    "debugmock": "vue-cli-service build --mode debugmock",
+    "dev": "cross-env WEBPACK_ENV=TESTENV FRONT_ENV=FRONT_ENV vue-cli-service serve",
+    "pro": "cross-env WEBPACK_ENV=TESTENV FRONT_ENV=FRONT_ENV vue-cli-service build",
+    "debug": "cross-env WEBPACK_ENV=TESTENV FRONT_ENV=FRONT_ENV vue-cli-service build --mode development",
+	"debugmock": "cross-env WEBPACK_ENV=TESTENV FRONT_ENV=FRONT_ENV vue-cli-service build --mode development",
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit tests/**/*.spec.js",
     "inspect": "vue-cli-service inspect"
@@ -28,13 +28,14 @@
     "@vue/eslint-config-prettier": "^4.0.0",
     "@vue/test-utils": "^1.0.0-beta.20",
     "babel-eslint": "^10.0.1",
-    "chai": "^4.1.2",
-    "copy-webpack-plugin": "^4.6.0",
+	"chai": "^4.1.2",
+	"cross-env": "^5.2.0",
     "eslint": "^5.8.0",
     "eslint-plugin-standard": "^4.0.0",
     "eslint-plugin-vue": "^5.0.0-0",
     "less": "^3.0.4",
-    "less-loader": "^4.1.0",
+	"less-loader": "^4.1.0",
+	"style-resources-loader": "^1.2.1",
     "vconsole-webpack-plugin": "^1.4.2",
     "vue-template-compiler": "^2.5.17"
   }

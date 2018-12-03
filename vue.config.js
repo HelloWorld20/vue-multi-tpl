@@ -1,3 +1,4 @@
+const path = require('path');
 const config = require(`./build/config.${process.env.NODE_ENV}`);
 
 let pages = {};
@@ -29,6 +30,23 @@ let configureWebpack = webpackConfig => {
 	// webpackConfig.output.chunkFilename = 'business/[name]/[name].[contenthash:8].js';
 	// 修改打包的业务js文件，放到入口下
 	webpackConfig.output.filename = 'business/[name]/[name].[hash:8].js';
+
+	// 全局注入less变量、mixins
+	let lessLoaders = webpackConfig.module.rules.find(v => {
+		return v.test.toString().includes('.less');
+	});
+
+	lessLoaders.oneOf.map(v => {
+		v.use.push({
+			loader: 'style-resources-loader',
+			options: {
+				patterns: [
+					path.resolve(__dirname, 'src/assets/styles/vars.less'),
+					path.resolve(__dirname, 'src/assets/styles/mixins.less')
+				]
+			}
+		});
+	});
 
 };
 

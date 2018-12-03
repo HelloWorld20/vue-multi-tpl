@@ -1,9 +1,8 @@
 import commonApis from '@common/apis';
 
 const apis = {
-	init: '/init',
-	submit: '/submit',
-	comfirm: '/confirm'
+	api1: '/api1',
+	api2: '/api2'
 };
 
 // 合并后export，如命名相同，公共会覆盖业务接口

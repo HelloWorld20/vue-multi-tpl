@@ -1,4 +1,5 @@
 import Mock from 'mockjs';
+// 这里只能拿到公共api
 import { Apis } from './apis';
 
 Mock.setup({
@@ -13,17 +14,17 @@ Mock.setup({
 // 第三个为返回值
 const mockData = [
 	[
-		Apis.fire,	// 接口
+		Apis.commonApi1,	// 接口
 		// 返回值
 		{
-			data: `来自公共接口:${Apis.fire}的get数据`
+			data: `来自公共接口:${Apis.commonApi1}的get数据`
 		}
 	],
 	[
-		Apis.test,
+		Apis.commonApi2,
 		'post',		// 第二个参数可以是请求类型，默认为get
 		{
-			data: `来自公共接口:${Apis.test}的post数据`
+			data: `来自公共接口:${Apis.commonApi2}的post数据`
 		}
 	]
 ];
